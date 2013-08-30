@@ -47,7 +47,7 @@ public class CameraFeatures {
     	
 //    	camparam.setGpsAltitude(123123);
     	camparam.setZoom(30);	//	can be up to 30 on my phone
-    	camparam.setColorEffect("point-red-yellow");	//	not all color effects work
+    	camparam.setColorEffect("negative");	//	not all color effects work
     	
     	//Sets the dimensions for EXIF thumbnail in Jpeg picture. 
     	//If applications set both width and height to 0, EXIF will not contain thumbnail.

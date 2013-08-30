@@ -1,14 +1,17 @@
 package com.example.cameraunit;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.hardware.Camera;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.SurfaceView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import camera.functions.AccessCamera;
-import camera.functions.CameraFeatures;
+import camera.functions.CameraFragment;
 import camera.functions.CameraPreview;
 import camera.functions.TakePicture;
 //	hardware not graphics
@@ -35,6 +38,46 @@ public class MainActivity extends Activity {
     	camera.takePicture(null, null, pictureCallback);// third parameter is a PictureCallback object
     }
     
+    
+    public void showFragment(View view){
+    	
+    	Log.w(TAG, "show fragment");
+    	
+    	
+    	
+    	// Create an instance of Camera
+        camera = AccessCamera.getCameraInstance();
+        
+        // Create our Preview view and set it as the content of our activity.
+        cameraPreview = new CameraPreview(this, camera);
+        
+        View preview = (View) findViewById(R.id.surfaceView1);
+        
+    	
+    	
+    	
+    	
+    	
+    	FragmentManager fm = getFragmentManager();
+    	CameraFragment cameraFragment = new CameraFragment();
+    	
+    	
+    	cameraFragment.setRetainInstance(true);
+    	
+    	cameraFragment.show(fm, "hey_there");// not sure what tag string is for
+    	
+    	
+    	// Create our Preview view and set it as the content of our activity.
+       
+        
+        
+        
+        // need to add cameraPreview to Camera fragment - add class that implements surfaceview
+        
+        
+    	
+    	
+    }
     
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
