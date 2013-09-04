@@ -54,10 +54,6 @@ public class MainActivity extends Activity {
         View preview = (View) findViewById(R.id.surfaceView1);
         
     	
-    	
-    	
-    	
-    	
     	FragmentManager fm = getFragmentManager();
     	CameraFragment cameraFragment = new CameraFragment();
     	
